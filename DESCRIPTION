@@ -1,0 +1,20 @@
+Package: taxr
+Title: Calculate Dutch Income Tax
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Wim",
+           family = "van der Ham",
+           role = c("aut", "cre"),
+           email = "wfjvdham@gmail.com")
+Description: Calculates the incometax you need to pay in
+    the netherlands since 2018
+License: GPL-3
+Suggests: 
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports: 
+    purrr,
+    config
