@@ -31,11 +31,8 @@
 #'   add_tax_variable("income_tax", input_col = "winst") %>%
 #'   add_tariefsaanpassing_extra() %>%
 #'   add_total_tax()
-#'
 add_tax_variable <- function(
-  df, variable_name = "starters_aftrek", needs_true = NA, input_col = "bruto"
-) {
-
+                             df, variable_name = "starters_aftrek", needs_true = NA, input_col = "bruto") {
   data <- parse_yml(variable_name)
 
   join_cols <- "year"

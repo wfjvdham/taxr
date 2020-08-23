@@ -26,7 +26,6 @@ calc_disks_single_value <- function(value, disks) {
   disks_prev <- append(list(list(upper_border = 0)), head(disks, -1))
 
   purrr::map2_int(disks, disks_prev, function(disk_n1, disk_n0) {
-
     amount_in_disk <- max(
       min(value, disk_n1$upper_border),
       disk_n0$upper_border

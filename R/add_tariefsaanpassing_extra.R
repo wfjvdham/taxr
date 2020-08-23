@@ -5,12 +5,11 @@
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 add_tariefsaanpassing_extra <- function(df) {
-
   income_tax <- parse_yml("income_tax") %>%
     dplyr::mutate(
       lower_border_highest_disk = purrr::map_int(
         disks,
-        ~.x %>%
+        ~ .x %>%
           head(-1) %>%
           tail(1) %>%
           purrr::pluck(1, "upper_border")
