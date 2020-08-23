@@ -2,7 +2,7 @@
 #'
 #' @param df tibble to add mkb_aftrek to
 #'
-#' @return df with extra column
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 add_mkb_aftrek <- function(df) {
   df %>%

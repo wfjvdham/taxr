@@ -2,7 +2,7 @@
 #'
 #' @param yml_name name of the yml file without extension
 #'
-#' @return df
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 parse_yml <- function(yml_name) {
   data <- paste0(yml_name, ".yml") %>%

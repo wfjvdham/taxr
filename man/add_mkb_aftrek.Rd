@@ -10,7 +10,7 @@ add_mkb_aftrek(df)
 \item{df}{tibble to add mkb_aftrek to}
 }
 \value{
-df with extra column
+a \link[tibble:tibble-package]{tibble}
 }
 \description{
 add_mkb_aftrek

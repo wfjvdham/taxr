@@ -2,7 +2,7 @@
 #'
 #' @param df tibble to add column to
 #'
-#' @return tibble with extra column
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 add_winst <- function(df) {
   df %>%

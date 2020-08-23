@@ -5,7 +5,7 @@
 #' @param needs_true only add variable when this column in df is true
 #' @param input_col calculate variable based on this column
 #'
-#' @return df with extra column
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #'
 #' @examples

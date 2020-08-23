@@ -10,7 +10,7 @@ parse_yml(yml_name)
 \item{yml_name}{name of the yml file without extension}
 }
 \value{
-df
+a \link[tibble:tibble-package]{tibble}
 }
 \description{
 parse_yml

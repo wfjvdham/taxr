@@ -21,7 +21,7 @@ add_tax_variable(
 \item{input_col}{calculate variable based on this column}
 }
 \value{
-df with extra column
+a \link[tibble:tibble-package]{tibble}
 }
 \description{
 add_tax_variable

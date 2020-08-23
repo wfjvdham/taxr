@@ -10,7 +10,7 @@ add_winst(df)
 \item{df}{tibble to add column to}
 }
 \value{
-tibble with extra column
+a \link[tibble:tibble-package]{tibble}
 }
 \description{
 add_winst
