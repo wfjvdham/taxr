@@ -38,15 +38,15 @@ df <- tibble::tibble(
 )
 
 df <- df \%>\%
-  add_variable("starters_aftrek", "starter") \%>\%
-  add_variable("oudedag_reserve", "oudedag") \%>\%
-  add_variable("zelf_aftrek", "ondernemer") \%>\%
+  add_tax_variable("starters_aftrek", "starter") \%>\%
+  add_tax_variable("oudedag_reserve", "oudedag") \%>\%
+  add_tax_variable("zelf_aftrek", "ondernemer") \%>\%
   add_mkb_aftrek() \%>\%
   add_winst() \%>\%
-  add_variable("alg_hef_korting", input_col = "winst") \%>\%
-  add_variable("arb_korting", input_col = "winst") \%>\%
-  add_variable("zvw_bijdrage", input_col = "winst") \%>\%
-  add_variable("income_tax", input_col = "winst") \%>\%
+  add_tax_variable("alg_hef_korting", input_col = "winst") \%>\%
+  add_tax_variable("arb_korting", input_col = "winst") \%>\%
+  add_tax_variable("zvw_bijdrage", input_col = "winst") \%>\%
+  add_tax_variable("income_tax", input_col = "winst") \%>\%
   add_tariefsaanpassing_extra() \%>\%
   add_total_tax()
 

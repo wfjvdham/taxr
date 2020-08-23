@@ -6,7 +6,7 @@
 #' @export
 add_tariefsaanpassing_extra <- function(df) {
 
-  data <- parse_yml("income_tax") %>%
+  income_tax <- parse_yml("income_tax") %>%
     dplyr::mutate(
       lower_border_highest_disk = purrr::map_int(
         disks,
@@ -15,7 +15,8 @@ add_tariefsaanpassing_extra <- function(df) {
           tail(1) %>%
           purrr::pluck(1, "upper_border")
       )
-    )
+    ) %>%
+    dplyr::select(!disks)
 
   tariefsaanpassing <- parse_yml("tariefsaanpassing")
 
@@ -27,13 +28,14 @@ add_tariefsaanpassing_extra <- function(df) {
       tariefsaanpassing_aftrek = zelf_aftrek + mkb_aftrek
     ) %>%
     dplyr::mutate(
-      tariefsaanpassing_extra = min(
+      tariefsaanpassing_input = min(
         max(0, winst - lower_border_highest_disk),
         tariefsaanpassing_aftrek
-      ) * tariefsaanpassing
+      ),
+      tariefsaanpassing_extra = calc_disks(tariefsaanpassing_input, disks)
     ) %>%
     dplyr::select(
-      -tariefsaanpassing_aftrek, -tariefsaanpassing, -lower_border_highest_disk,
-      -disks
+      -tariefsaanpassing_aftrek, -tariefsaanpassing_input,
+      -lower_border_highest_disk, -disks
     )
 }

@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "wfjvdham@gmail.com")
 Description: Calculates the incometax you need to pay in
-    the netherlands since 2018
+    the netherlands since 2018. Especially focused on freelance.
 License: GPL-3
 Imports: 
     dplyr,

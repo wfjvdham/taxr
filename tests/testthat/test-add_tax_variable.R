@@ -60,5 +60,5 @@ test_that("zelf aftrek", {
   non_ondernemer <- df1 %>%
     dplyr::filter(!ondernemer)
 
-  expect_false(all(non_ondernemer$zelf_aftrek == 0L))
+  expect_true(all(non_ondernemer$zelf_aftrek == 0L))
 })
