@@ -1,5 +1,7 @@
 #' add_tax_variable
 #'
+#' Even testen hoor
+#'
 #' @param df tibble to add variable to
 #' @param variable_name name of the variable to add
 #' @param needs_true only add variable when this column in df is true
@@ -33,7 +35,7 @@
 #'   add_total_tax()
 add_tax_variable <- function(df, variable_name = "starters_aftrek",
                              needs_true = NA, input_col = "bruto") {
-  data <- parse_yml(variable_name)
+  data<-parse_yml(variable_name)
 
   join_cols <- "year"
   if (needs_true %in% colnames(df)) {
