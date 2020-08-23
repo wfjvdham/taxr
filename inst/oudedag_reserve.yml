@@ -1,0 +1,14 @@
+year:
+- 2018
+- 2019
+- 2020
+disks:
+- - upper_border: .inf
+    perc: 0.0944
+    max_result: 8775
+- - upper_border: .inf
+    perc: 0.0944
+    max_result: 8999
+- - upper_border: .inf
+    perc: 0.0944
+    max_result: 9218

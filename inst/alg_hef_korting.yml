@@ -1,0 +1,17 @@
+year:
+- 2018
+- 2019
+- 2020
+disks:
+- - upper_border: 20142
+    fixed: 2265
+  - upper_border: 68507
+    perc: -0.04683
+- - upper_border: 20384
+    fixed: 2477
+  - upper_border: 68507
+    perc: -0.05147
+- - upper_border: 20711
+    fixed: 2711
+  - upper_border: 68507
+    perc: -0.05672
