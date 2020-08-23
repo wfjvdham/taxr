@@ -17,7 +17,9 @@ Imports:
     tibble,
     yaml
 Suggests: 
-    testthat
+    testthat,
+    spelling,
+    covr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -25,3 +27,4 @@ RoxygenNote: 7.1.0
 Config/testthat/edition: 3
 URL: https://github.com/wfjvdham/taxr
 BugReports: https://github.com/wfjvdham/taxr/issues
+Language: en-US
