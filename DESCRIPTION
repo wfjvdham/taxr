@@ -6,9 +6,11 @@ Authors@R:
            family = "van der Ham",
            role = c("aut", "cre"),
            email = "wfjvdham@gmail.com")
-Description: Calculates the incometax you need to pay in
-    the netherlands since 2018. Especially focused on freelance.
+Description: Calculates the incometax you need to pay in the
+    netherlands since 2018. Especially focused on freelance.
 License: GPL-3
+URL: https://github.com/wfjvdham/taxr
+BugReports: https://github.com/wfjvdham/taxr/issues
 Imports: 
     dplyr,
     logger,
@@ -17,14 +19,12 @@ Imports:
     tibble,
     yaml
 Suggests: 
-    testthat,
+    covr,
     spelling,
-    covr
+    testthat
+Config/testthat/edition: 3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
-Config/testthat/edition: 3
-URL: https://github.com/wfjvdham/taxr
-BugReports: https://github.com/wfjvdham/taxr/issues
-Language: en-US
