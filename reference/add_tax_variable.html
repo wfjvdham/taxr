@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="add_tax_variable — add_tax_variable" />
-<meta property="og:description" content="add_tax_variable" />
+<meta property="og:description" content="Even testen hoor" />
 
 
 
@@ -114,7 +114,7 @@
     </div>
 
     <div class="ref-description">
-    <p>add_tax_variable</p>
+    <p>Even testen hoor</p>
     </div>
 
     <pre class="usage"><span class='fu'>add_tax_variable</span>(
@@ -151,6 +151,8 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>taxr</span>)
+
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(
   <span class='kw'>bruto</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> -<span class='fl'>10000</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>100000</span>, <span class='kw'>length.out</span> <span class='kw'>=</span> <span class='fl'>11</span>),
   <span class='kw'>year</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2018</span>, <span class='fl'>2019</span>, <span class='fl'>2020</span>, <span class='fl'>2018</span>, <span class='fl'>2019</span>, <span class='fl'>2020</span>, <span class='fl'>2018</span>, <span class='fl'>2019</span>, <span class='fl'>2020</span>, <span class='fl'>2018</span>, <span class='fl'>2020</span>),
@@ -160,16 +162,25 @@
   <span class='kw'>overige_aftrek</span> <span class='kw'>=</span> <span class='fl'>1500</span>
 )
 
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>tibble</span><span class='kw ns'>::</span><span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(
+  <span class='kw'>bruto</span> <span class='kw'>=</span> <span class='fl'>65000</span>,
+  <span class='kw'>ondernemer</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>starter</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>oudedag</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>overige_aftrek</span> <span class='kw'>=</span> <span class='fl'>1575</span>,
+  <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2020</span>
+)
+
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='no'>df</span> <span class='kw'>%&gt;%</span>
   <span class='fu'>add_tax_variable</span>(<span class='st'>"starters_aftrek"</span>, <span class='st'>"starter"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'>add_tax_variable</span>(<span class='st'>"oudedag_reserve"</span>, <span class='st'>"oudedag"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'>add_tax_variable</span>(<span class='st'>"zelf_aftrek"</span>, <span class='st'>"ondernemer"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='add_mkb_aftrek.html'>add_mkb_aftrek</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='add_winst.html'>add_winst</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>add_tax_variable</span>(<span class='st'>"alg_hef_korting"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"winst"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>add_tax_variable</span>(<span class='st'>"arb_korting"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"winst"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>add_tax_variable</span>(<span class='st'>"alg_hef_korting"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"box_1"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>add_tax_variable</span>(<span class='st'>"arb_korting"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"bruto"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'>add_tax_variable</span>(<span class='st'>"zvw_bijdrage"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"winst"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>add_tax_variable</span>(<span class='st'>"income_tax"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"winst"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>add_tax_variable</span>(<span class='st'>"income_tax"</span>, <span class='kw'>input_col</span> <span class='kw'>=</span> <span class='st'>"box_1"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='add_tariefsaanpassing_extra.html'>add_tariefsaanpassing_extra</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='add_total_tax.html'>add_total_tax</a></span>()</div></pre>
   </div>
