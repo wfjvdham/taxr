@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/taxr)](https://CRAN.R-project.org/package=taxr)
+[![Codecov test
+coverage](https://codecov.io/gh/wfjvdham/taxr/branch/master/graph/badge.svg)](https://codecov.io/gh/wfjvdham/taxr?branch=master)
 [![R build
 status](https://github.com/wfjvdham/taxr/workflows/R-CMD-check/badge.svg)](https://github.com/wfjvdham/taxr/actions)
 <!-- badges: end -->
