@@ -11,10 +11,10 @@ add_winst <- function(df) {
         bruto > 0,
         max(
           0,
-          bruto - starters_aftrek - zelf_aftrek - oudedag_reserve - mkb_aftrek -
-            overige_aftrek
+          bruto - starters_aftrek - zelf_aftrek - oudedag_reserve - mkb_aftrek
         ),
         bruto - mkb_aftrek
-      )
+      ),
+      box_1 = winst - overige_aftrek
     )
 }

@@ -16,7 +16,7 @@
 #' calc_disks(values, disks)
 calc_disks <- function(values, disks) {
   values %>%
-    purrr::map_int(calc_disks_single_value, disks)
+    purrr::map_dbl(calc_disks_single_value, disks)
 }
 
 calc_disks_single_value <- function(value, disks) {
@@ -25,7 +25,7 @@ calc_disks_single_value <- function(value, disks) {
   # (which are the maximum borders of the previous disk)
   disks_prev <- append(list(list(upper_border = 0)), head(disks, -1))
 
-  purrr::map2_int(disks, disks_prev, function(disk_n1, disk_n0) {
+  purrr::map2_dbl(disks, disks_prev, function(disk_n1, disk_n0) {
     amount_in_disk <- max(
       min(value, disk_n1$upper_border),
       disk_n0$upper_border
@@ -41,8 +41,8 @@ calc_disks_single_value <- function(value, disks) {
     } else {
       logger::log_error("{paste(disk_n1, collapse = ', ')} is not valid")
     }
-    as.integer(floor(result))
+    result
   }) %>%
     sum() %>%
-    max(0L)
+    max(0)
 }
